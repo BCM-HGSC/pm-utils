@@ -18,7 +18,7 @@ def run(file_path, components):
             parent = path.parent.name
             results = []
             for c in components:
-                if c ==  "n":
+                if c == "n":
                     results.append(filename)
                 elif c == "s":
                     results.append(filestem)
