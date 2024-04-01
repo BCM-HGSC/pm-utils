@@ -39,7 +39,11 @@ def parse_args():
         "components",
         metavar="component",
         type=str,
-        help="Components to include in output: n (filename), s (filestem), g (grandparent), d (parent), p (filepath)",
+        help=(
+            "Components to include in output: "
+            "n (filename), s (filestem), g (grandparent), "
+            "d (parent), p (filepath)"
+        ),
     )
     parser.add_argument(
         "file",
@@ -60,10 +64,10 @@ def parse_args():
     return args
 
 
-
 def main():
     args = parse_args()
     run(args.file, args.components)
+
 
 if __name__ == "__main__":
     main()
