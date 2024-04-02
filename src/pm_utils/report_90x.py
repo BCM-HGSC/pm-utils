@@ -27,7 +27,7 @@ from .rpt_columns import (
     tmqc_90x_cols,  # output
 )
 from .mappings import STUDY_MAPPING
-from .version import __version__
+from . import __version__
 
 
 def main():
