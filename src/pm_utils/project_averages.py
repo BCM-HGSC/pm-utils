@@ -14,7 +14,7 @@ from . import __version__
 
 
 # display.precision sets the output display precision in terms of decimal places
-pd.set_option("precision", 4)
+pd.set_option("display.precision", 4)  # explicitly specify the full option key
 
 
 def main():
