@@ -10,7 +10,7 @@ import pandas as pd
 
 # After another blank line, import third-party libraries
 from .utils import normalize_name
-from .version import __version__
+from . import __version__
 
 
 # display.precision sets the output display precision in terms of decimal places

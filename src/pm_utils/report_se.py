@@ -18,8 +18,8 @@ import pandas as pd
 from .utils import normalize_name
 from .rpt_columns import rpt_se_cols, WKT3_COLS, tmqc_se_cols
 
+from . import __version__
 from .mappings import STUDY_MAPPING
-from .version import __version__
 
 
 def main():
