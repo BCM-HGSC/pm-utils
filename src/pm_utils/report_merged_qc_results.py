@@ -58,6 +58,12 @@ def parse_args():
 
 def run(recent_merge_report, output_file):
     rtm_sub = load_merge_report(recent_merge_report)
+    # specify number of decimal places
+    rtm_sub['contamination_pct'] = (
+            rtm_sub['contamination_pct']
+            .astype(float)
+            .round(decimals=4)
+    )
     qc = qc_results(rtm_sub)
     # TODO track weeks
     # will contain output for at least the last 4 weeks along with metrics
@@ -87,5 +93,5 @@ def qc_results(rtm_sub):
 
 def output_results(output_file, rpt, tmqc):
     with pd.ExcelWriter(output_file) as writer:
-        rpt.to_excel(writer, sheet_name="tab3", index=False)
-        tmqc.to_excel(writer, sheet_name="tm_qc", index=False)
+        rpt.to_excel(writer, sheet_name="tab3", float_format="%.4f", engine='xlsxwriter', index=False)
+        tmqc.to_excel(writer, sheet_name="tm_qc", float_format="%.4f", engine='xlsxwriter', index=False)
