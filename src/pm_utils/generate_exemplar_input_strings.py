@@ -24,7 +24,7 @@ def run(inp_dump):
     print(exemplar_input_str)
 
 
-def generate_exemplar_input_str(inp_dump, delimiter=","):
+def generate_exemplar_input_str(inp_dump):
     unique_strs = sorted(set(inp_dump.split()))
     pattern_list = [f"%{item}%" for item in unique_strs]
     exemplar_input_str = ",".join(pattern_list)
