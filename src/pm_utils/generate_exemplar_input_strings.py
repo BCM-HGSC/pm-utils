@@ -25,16 +25,7 @@ def run(inp_dump):
 
 
 def generate_exemplar_input_str(inp_dump, delimiter=","):
-    normalized_inp_str = normalize_inp(inp_dump)
-    str_list = normalized_inp_str.split()
-    concatenated_str = delimiter.join(str_list)
-    exemplar_input_str = "%" + concatenated_str.replace(delimiter, "%,%") + "%"
+    unique_strs = sorted(set(inp_dump.split()))
+    pattern_list = [f"%{item}%" for item in unique_strs]
+    exemplar_input_str = ",".join(pattern_list)
     return exemplar_input_str
-
-
-def normalize_inp(inp_dump):
-    # Remove leading/trailing whitespace characters
-    cleaned_inp_dump = inp_dump.strip()
-    lines = cleaned_inp_dump.splitlines()
-    normalized_inp_str = " ".join(lines)
-    return normalized_inp_str
